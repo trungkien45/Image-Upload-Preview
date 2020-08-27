@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+function ImagePrevew(input) {
+        
+         if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+                    $('#Image1').attr('src',e.target.result);
+                    
+                //}
+             }
+             reader.readAsDataURL(input.files[0]);
+             
+         }
+     }
+	 $("document").ready(function () {
+         $('#FileUpload1').change(function () {
+             ImagePrevew(this);
+         });
+     });
+	 </script>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+			<table>
+				<tr><td>File to upload:</td><td><input type="file" id="FileUpload1" name="file" /></td></tr>
+				<tr><td></td><td><img id="Image1"/>
+				</td></tr>
+			</table>
+
+</body>
+</html> 
